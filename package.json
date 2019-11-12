@@ -1,10 +1,10 @@
 {
-  "name": "typescript-electron-webpack-react-boilerplate",
+  "name": "mark-downy",
   "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ivan-nosar/typescript-electron-webpack-react-boilerplate.git"
+    "url": "https://github.com/ivan-nosar/mark-downy.git"
   },
   "main": "./dist/main.js",
   "scripts": {
@@ -20,8 +20,8 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "build": {
-    "productName": "TypeScript + Electron + Webpack + React boilerplate",
-    "appId": "ru.ivan-nosar.typescript-electron-webpack-react-boilerplate",
+    "productName": "MarkDowny",
+    "appId": "ru.ivan-nosar.mark-downy",
     "directories": {
       "output": "release"
     },
