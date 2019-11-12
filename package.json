@@ -1,0 +1,68 @@
+{
+  "name": "typescript-electron-webpack-react-boilerplate",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivan-nosar/typescript-electron-webpack-react-boilerplate.git"
+  },
+  "main": "./dist/main.js",
+  "scripts": {
+    "build:main": "cross-env NODE_ENV=production webpack --config webpack.main.prod.config.js",
+    "build:renderer": "cross-env NODE_ENV=production webpack --config webpack.renderer.prod.config.js",
+    "build": "npm run build:main && npm run build:renderer",
+    "dev:renderer": "webpack-dev-server --config webpack.renderer.dev.config.js",
+    "dev:main": "webpack --config webpack.main.config.js && electron ./dist/main.js",
+    "dev": "cross-env START_HOT=1 npm run dev:renderer",
+    "prestart": "npm run build",
+    "start": "electron .",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "build": {
+    "productName": "TypeScript + Electron + Webpack + React boilerplate",
+    "appId": "ru.ivan-nosar.typescript-electron-webpack-react-boilerplate",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/",
+      "node_modules/",
+      "package.json"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@hot-loader/react-dom": "^16.10.2",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.1",
+    "css-loader": "^2.1.1",
+    "electron": "^3.1.13",
+    "file-loader": "^3.0.1",
+    "fork-ts-checker-webpack-plugin": "^1.5.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "lodash": "^4.17.15",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "tslint": "^5.20.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2"
+  }
+}
