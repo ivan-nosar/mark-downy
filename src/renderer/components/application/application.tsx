@@ -1,7 +1,5 @@
 import * as React from "react";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
 
 export interface State {
     open?: boolean;
@@ -28,7 +26,7 @@ export class Application extends React.Component<Props, State> {
                 color="primary"
                 onClick={this.click}
             >
-                Click me
+                Click me!
             </Button>
         );
     }
